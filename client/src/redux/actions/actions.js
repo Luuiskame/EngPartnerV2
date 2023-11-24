@@ -12,7 +12,6 @@ export const getAllUsers = () => {
     try {
       const response = await axios.get("http://localhost:3001/users");
 
-      // Verificar que la propiedad "success" sea true
       if (response.data.success) {
         const users = response.data.users;
         dispatch({ type: GET_ALL_USERS, payload: users });
