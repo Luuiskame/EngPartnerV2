@@ -1,7 +1,8 @@
 import axios from "axios";
-
-export const GET_ALL_USERS = "GET_ALL_USERS";
-export const ERROR_GETTING_USERS = "ERROR_GETTING_USERS";
+import {
+  GET_ALL_USERS,
+  ERROR_GETTING_USERS,
+} from "../action_types/ACTION_TYPES";
 
 export const getAllUsers = () => {
   return async function (dispatch) {
