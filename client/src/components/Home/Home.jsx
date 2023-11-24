@@ -11,8 +11,7 @@ import logo from "../../assets/logo-EngPartner.png";
 import Users from "./Users/Users";
 import GlobalChat from "../Chats/GlobalChat/GlobalChat";
 
-
-
+// eslint-disable-next-line react/prop-types
 const Home = ({ setIsAuth }) => {
   const cookies = new Cookies();
   const handleLogOut = async () => {
@@ -25,32 +24,34 @@ const Home = ({ setIsAuth }) => {
 
   return (
     <>
-    <nav className={style.nav}>
+      <nav className={style.nav}>
         <img src={logo} className={style.logo} />
         <h2 className="">Welcome, {user} !</h2>
         <div>
-          <Link to='/profile'>
-          <button className={style.profileBtn}>Your profile</button>
+          <Link to="/profile">
+            <button className={style.profileBtn}>Your profile</button>
           </Link>
-          <Link to='/premium'>
-          <button className={style.premium}>Premium</button>
+          <Link to="/premium">
+            <button className={style.premium}>Premium</button>
           </Link>
-          <button onClick={handleLogOut} className={style.signOut}>Log out</button>
+          <button onClick={handleLogOut} className={style.signOut}>
+            Log out
+          </button>
         </div>
       </nav>
       <div className={style.globalChat}>
         <GlobalChat />
       </div>
-        <div className={style.container}>
-      <div className={style.users}>
-        <Link to="/topics">
-          <button className={style.topic}>
-            Search for a topic to talk about!
-          </button>
-        </Link>
-        <Users />
+      <div className={style.container}>
+        <div className={style.users}>
+          <Link to="/topics">
+            <button className={style.topic}>
+              Search for a topic to talk about!
+            </button>
+          </Link>
+          <Users />
+        </div>
       </div>
-    </div>
     </>
   );
 };

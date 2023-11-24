@@ -1,4 +1,7 @@
-import { GET_ALL_USERS, ERROR_GETTING_USERS } from "../actions/actions";
+import {
+  GET_ALL_USERS,
+  ERROR_GETTING_USERS,
+} from "../action_types/ACTION_TYPES";
 
 const initialState = {
   users: [],
