@@ -14,7 +14,7 @@ import styles from "./Filters.module.css";
 const Filters = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users.users);
-  console.log(users)
+ 
 
   // const [sexFilterValue, setSexFilterValue] = useState("");
   const [activeFilter, setActiveFilter] = useState(null);
@@ -45,7 +45,7 @@ const Filters = () => {
   const toggleFiltersVisibility = () => {
     setAreFiltersVisible(!areFiltersVisible);
     setButtonClicked(true);
-    console.log(buttonClicked);
+   
   };
 
   const handleRemoveFilter = () => {
@@ -71,7 +71,6 @@ const Filters = () => {
   const handleFilterByVip = () => {
     setIsVipFilterValue(!isVipFilterValue);
 
-    // console.log(isVipFilterValue);
   };
 
   const applyFilters = () => {

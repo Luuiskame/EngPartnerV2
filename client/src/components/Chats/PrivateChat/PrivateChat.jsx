@@ -15,7 +15,7 @@ const PrivateChat = ({ setIsAuth }) => {
   const uid = localStorage.getItem("uid");
   const dispatch = useDispatch();
   const friends = useSelector((state) => state.users.friends);
-  console.log(friends);
+
 
   useEffect(() => {
     dispatch(getFriends(uid));

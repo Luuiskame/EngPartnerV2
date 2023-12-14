@@ -24,13 +24,13 @@ const Home = ({ setIsAuth }) => {
 
 
   useEffect(() => {
-    console.log(uid)
+  
     if (!localStorageUID) {
       signOut(auth);
       setIsAuth(false);
     }
     dispatch(getMyUser(localStorageUID));
-    console.log('holas')
+  
   }, [uid]);
 
    return (

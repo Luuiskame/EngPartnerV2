@@ -21,7 +21,7 @@ const AnnualPremium=({isVip,uid})=>{
             card: elements.getElement(CardElement),
         });
         if (!error) {
-            console.log(paymentMethod)
+        
             const { id } = paymentMethod
             try {
                 const { data } = await axios.post(`${API_URL}/newPremium`, {
@@ -41,9 +41,9 @@ const AnnualPremium=({isVip,uid})=>{
                         showCloseButton: true,
                     })
                 }
-                console.log(data);
+                
             } catch (error) {
-                console.log(error);
+               throw Error(error)
             }
         }
     }

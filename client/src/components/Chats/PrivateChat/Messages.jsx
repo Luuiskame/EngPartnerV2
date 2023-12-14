@@ -35,7 +35,6 @@ const Messages = ( {languageChecked, setLanguageChecked, handleChangeSwitch} ) =
         };
       }
     }, [chatId, setMessages]);
-      console.log(messages)
 
   return (
     <div className={style.messages} style={isVip?{height:'91%'}:{height:'84%'}}>

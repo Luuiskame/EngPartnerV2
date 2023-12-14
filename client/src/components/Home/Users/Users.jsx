@@ -19,7 +19,7 @@ const Users = ({ setIsAuth }) => {
   const filteredUsers = useSelector((state) => state.countries.filteredUsers);
   const uid = localStorage.getItem("uid");
   const dispatch = useDispatch();
-  console.log(users);
+
   // const [selectedCountry, setSelectedCountry] = useState(null);
 
   useEffect(() => {

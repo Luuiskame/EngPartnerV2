@@ -14,7 +14,7 @@ const GoogleMapComponent = ({ users, onSelectMarker, onSelectCountry }) => {
       const clickedLat = event.latLng.lat();
       const clickedLng = event.latLng.lng();
 
-      console.log("Clicked Coordinates:", clickedLat, clickedLng);
+   
 
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${clickedLat},${clickedLng}&key=AIzaSyBK6CQ92t3JpcAt9ayagYnAg_k4-KgfFLk`
@@ -25,7 +25,7 @@ const GoogleMapComponent = ({ users, onSelectMarker, onSelectCountry }) => {
       }
 
       const data = await response.json();
-      console.log("Geocoding Response:", data);
+   
 
       const country = findCountryInResponse(data);
       if (country) {
@@ -45,7 +45,7 @@ const GoogleMapComponent = ({ users, onSelectMarker, onSelectCountry }) => {
     );
     if (countryComponent) {
       const shortName = countryComponent.short_name;
-      console.log("Short Name:", shortName);
+     
       return { short_name: shortName };
     }
 

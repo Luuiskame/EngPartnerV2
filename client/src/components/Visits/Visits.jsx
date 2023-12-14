@@ -16,7 +16,7 @@ const Visits = ({ visitedUid }) => {
 
 
   const uid = useSelector(state => state.users.uid)
-  console.log(uid)
+  
   const name = useSelector(state => state.users.name)
   const lastname = useSelector(state => state.users.lastname)
   const sex = useSelector(state => state.users.sex)
@@ -46,7 +46,7 @@ const Visits = ({ visitedUid }) => {
         uid: uid,
       }
     }
-    console.log(userData)
+   
     dispatch(postUserVisiting(userData))
   }
 

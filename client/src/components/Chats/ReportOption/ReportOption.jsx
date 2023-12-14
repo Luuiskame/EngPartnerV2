@@ -21,8 +21,7 @@ const ReportOption = ({setLastClickedMessageId, message, messageId,user}) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const selectedValue = event.target.value
-        console.log(`Reported: ${selectedValue}`);
-        console.log(message);
+       
         const reportData = {
           user: user,
           reportData: {
@@ -32,7 +31,7 @@ const ReportOption = ({setLastClickedMessageId, message, messageId,user}) => {
             messageId: messageId,
           }
         }
-        console.log(reportData)
+       
         dispatch(submitReport(reportData))
         setLastClickedMessageId(null)
 

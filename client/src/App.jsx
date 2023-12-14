@@ -28,7 +28,6 @@ function App() {
   const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
 
   useEffect(() => {
-    console.log(admin);
   }, [isAuth]);
 
   if (!isAuth) {

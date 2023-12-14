@@ -5,7 +5,7 @@ const axios= require('axios')
 
 const isVipExpired = async (uid) => {
     try {
-        console.log(uid)
+        
         const userSnapshot = await db.collection('users').where('uid', '==', uid).get();
         const userData = userSnapshot.docs[0].data(); 
         const { timeIsVip } = userData;

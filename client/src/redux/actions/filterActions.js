@@ -21,7 +21,7 @@ export const filterByVip = ()=>{
 }
 
 export const filterByAge = (age)=>{
-    console.log(typeof(age))
+   
     return{
         type: FILTER_BY_AGE,
         payload: age

@@ -11,7 +11,7 @@ export const getAllCountries = () => async (dispatch) => {
   try {
     const response = await axios(`${API_URL}/getcountries`);
     const countriesData = response.data;
-    // console.log(countriesData)
+   
 
     dispatch({
       type: GET_ALL_COUNTRIES,

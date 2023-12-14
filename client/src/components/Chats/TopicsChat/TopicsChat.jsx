@@ -13,7 +13,7 @@ const TopicsChat = ({ setingValueRoom, languageChecked, setLanguageChecked, hand
   const language = useSelector(state=> state.users?.language)
   const languageRead = useSelector(state=> state.users?.languageRead)
   const isVip = useSelector(state=> state.users?.isVip)
-  console.log(country);
+
   const [rooms,setRooms]= useState(['Global','Sport','Animals',"Food",'Tech',country, ...Myrooms ])
   const handleTopic = (e)=>{
     const topic = e.target.value

@@ -21,9 +21,9 @@ const Message = ({ message, languageChecked }) => {
   const isVip = useSelector((state) => state.users.isVip);
 
   useEffect(() => {
-    console.log(message);
+
   }, [message]);
-  console.log(message);
+ 
   return (
     <div className={style.messageContainer} ref={ref}>
 

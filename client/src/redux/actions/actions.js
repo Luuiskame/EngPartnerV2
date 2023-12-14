@@ -130,7 +130,7 @@ export const createNewUser = (userData) => {
         type: CREATE_NEW_USER,
         payload: response,
       });
-      console.log(response);
+      
     } catch (error) {
       throw Error(error);
     }
@@ -151,7 +151,7 @@ export const getOnline = () => async (dispatch) => {
 export const getUserByUserName = (user) => async (dispatch) => {
   try {
     const { data } = await axios(`${API_URL}/user?user=${user}`);
-    console.log(data);
+    
 
     dispatch({
       type: GET_USER_BY_USERNAME,
@@ -164,11 +164,11 @@ export const getUserByUserName = (user) => async (dispatch) => {
 export const getMyUser = (uid) => async (dispatch) => {
   try {
     const myUid = { uid: uid };
-    console.log(myUid);
+    
     const { data } = await axios.post(`${API_URL}/user`, myUid);
     localStorage.setItem("language", data.language);
     localStorage.setItem("languageRead", data.languageRead);
-    console.log(data);
+    
     dispatch({
       type: GET_MY_USER,
       payload: data,
@@ -259,7 +259,7 @@ export const submitReport = (reportData) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(`${API_URL}/reports`, reportData);
-      console.log("Report submitted successfully", response.data);
+      
       dispatch({
         type: SELECT_REPORT,
         payload: response.data,
@@ -271,7 +271,7 @@ export const submitReport = (reportData) => {
 };
 
 export const CreateRoom = (obj) => async (dispatch) => {
-  console.log(obj);
+ 
   await axios.post(`${API_URL}/createRoom`, obj);
   dispatch({
     type: CREATE_ROOM,
@@ -337,7 +337,7 @@ export const putDeleteRoom = (obj) => async (dispatch) => {
 export const postUserVisiting = (userData) => async (dispatch)=>{
   try {
     const {data} = axios.post(`${API_URL}/profile`,userData)
-    console.log(data)
+    
 
   dispatch({
     type: POST_VISITS,
@@ -350,9 +350,9 @@ export const postUserVisiting = (userData) => async (dispatch)=>{
 
 export const getVisitors = (uid) => async (dispatch)=>{
   try {
-    console.log(`this is the uid: ${uid}`)
+    
     const {data} = await axios(`${API_URL}/user/visitingusers?uid=${uid}`)
-    // console.log(data)
+  
 
     dispatch({
       type: GET_VISITS,
@@ -376,7 +376,7 @@ export const getRating = ()=>async(dispatch)=>{
 export const rated = (userRated)=> async (dispatch)=>{
   try {
     const {data} = await axios.post(`${API_URL}/rate`, userRated)
-    console.log(data)
+    
 
     dispatch({
       type: RATED,

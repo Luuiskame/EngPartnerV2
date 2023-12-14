@@ -75,7 +75,7 @@ const Chat = () => {
   }, [room]);
 
   useEffect(() => {
-    console.log('klajaslkdsakjdalkjdskda');
+  
   }, [messages, languageChecked])
 
   const handleSubmit = async (e) => {
@@ -100,7 +100,7 @@ const Chat = () => {
       [messageId]: !messageOptions[messageId]
     })
     setLastClickedMessageId(messageId)
-    console.log(messageId)
+   
   };
 
   const handleChangeSwitch = () => {

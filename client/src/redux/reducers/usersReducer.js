@@ -82,7 +82,7 @@ const usersReducer = (state = initialState, action) => {
       };
 
     case GET_MY_USER:
-      console.log("holas reducer");
+      
       return {
         ...state,
         uid: action.payload.uid,
@@ -220,7 +220,7 @@ const usersReducer = (state = initialState, action) => {
     case FILTER_BY_VIP:
       let filteredVip
       filteredVip = state.users.filter((user) => user.isVip === true)
-      console.log(filteredVip)
+      
       return {
         ...state,
         users: filteredVip,
@@ -229,7 +229,7 @@ const usersReducer = (state = initialState, action) => {
     case FILTER_BY_AGE:
       const age = action.payload;
       const ageFiltered = state.users.filter((user) => user.age === age);
-      console.log(ageFiltered)
+     
       return {
         ...state,
         users: ageFiltered,

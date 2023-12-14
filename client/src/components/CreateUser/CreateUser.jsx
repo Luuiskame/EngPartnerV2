@@ -160,10 +160,9 @@ const CreateUser = ( {setIsAuth} ) => {
         })
         
         if(isTaken.length > 0){
-            console.log('true, ya existe', isTaken);
             return true
         }
-        console.log('false, no existe');
+     
         return false
     } catch (error) {
         throw Error(error)
@@ -177,10 +176,10 @@ const CreateUser = ( {setIsAuth} ) => {
         })
         
         if(isTaken.length > 0){
-            console.log('true, ya existe', isTaken);
+            
             return true
         }
-        console.log('false, no existe');
+      
         return false
     } catch (error) {
         throw Error(error)
@@ -235,7 +234,7 @@ const CreateUser = ( {setIsAuth} ) => {
 
             const userCredential = await createUserWithEmailAndPassword(auth, createUserInfo.email, createUserInfo.password);
             const user = userCredential.user;
-            console.log(user);
+          
             await sendEmailVerification(user);
             setRegistred(true);
             cookies.set("auth-token", user.refreshToken);

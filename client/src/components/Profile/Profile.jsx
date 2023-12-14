@@ -121,7 +121,6 @@ const Profile = ({ setIsAuth }) => {
   };
 
   const addFriend = (e) => {
-    console.log(friend);
     setisFriend(true);
     dispatch(handleUser(friend, "add"));
     Swal.fire({

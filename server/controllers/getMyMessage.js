@@ -5,9 +5,9 @@ const MyMessage = async(uid, userReceiver)=>{
         const allMessages = await db.collection('messages').get();
         
         const myMessages = allMessages.docs.map(message => {
-            console.log(uid)
             
-            console.log(message.data())
+            
+            
                 const messageData = message.data();
                 if (messageData.sender === uid && messageData.receiver === userReceiver) {
                     return {
@@ -30,7 +30,7 @@ const MyMessage = async(uid, userReceiver)=>{
 const getMyMessage= async(req,res)=>{
     try {
         const { uid, userReceiver  } = req.body;
-        console.log(uid)
+       
         const result = await MyMessage(uid, userReceiver );
         res.status(200).json(result);
     } catch (error) {

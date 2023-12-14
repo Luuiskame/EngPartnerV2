@@ -32,7 +32,7 @@ const Chats = () => {
 
     const handleSelect = (id)=>{
         dispatch(chatReducer(id))
-        console.log(id);
+    
     }
 
   return (

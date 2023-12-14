@@ -13,7 +13,7 @@ const RateCard = ()=>{
 
     const handleRating = (value)=>{
         setCurrentRating(value)
-        console.log(currentRating)
+      
     }
 
     const onSubmitRate = (event) => {
@@ -22,7 +22,7 @@ const RateCard = ()=>{
             rating: currentRating,
             uid: uid
         }
-        console.log(userRated)
+        
         dispatch(rated(userRated))
     }
     return (

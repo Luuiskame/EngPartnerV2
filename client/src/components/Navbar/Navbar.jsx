@@ -49,14 +49,13 @@ const Navbar = ({ setIsAuth }) => {
     };
 
     useEffect(() => {
-        console.log(uid)
-        console.log("is admin" + " " + admin)
+    
         if (!localStorageUID) {
           signOut(auth);
           setIsAuth(false);
         }
         dispatch(getMyUser(localStorageUID));
-        console.log('holas')
+       
       }, [uid]);
 
 

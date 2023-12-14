@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
         card: elements.getElement(CardElement),
     });
     if(!error){
-        console.log(uid)
+       
         const {id}= paymentMethod  
         try {
             const {data}=await axios.post(`${API_URL}/newPremium`,{
@@ -44,7 +44,7 @@ const handleSubmit = async (e) => {
                   })
             }
         } catch (error) {
-            console.log(error);
+            throw Error(error)
         }      
     }
 

@@ -33,7 +33,6 @@ const Login = ({ setIsAuth }) => {
 
       if (existingUserDoc.exists()) {
         // Si el usuario ya está registrado con google
-        console.log('El usuario ya está registrado.');
 
         dispatch(
           setUserDataGoogleAccount({
@@ -47,7 +46,7 @@ const Login = ({ setIsAuth }) => {
         localStorage.setItem('languageChecked', false);
         cookies.set('auth-token', result.user.refreshToken);
         setIsAuth(true);
-        console.log(result.user);
+    
 
         dispatch(getMyUser(uid))
         await axios.put(`${API_URL}/geton`, { uid, is: 'on' });
@@ -66,7 +65,7 @@ const Login = ({ setIsAuth }) => {
         localStorage.setItem('languageChecked', false);
         cookies.set('auth-token', result.user.refreshToken);
         setIsAuth(true);
-        console.log(result.user);
+       
 
         axios.put(`${API_URL}/geton`, { uid, is: 'on' });
         navigate('/createuser');

@@ -71,7 +71,7 @@ const Register = ({ setIsAuth }) => {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
             const user = userCredential.user;
-            console.log(user);
+           
             await sendEmailVerification(user);
             setRegistred(true);
             cookies.set("auth-token", user.refreshToken);
