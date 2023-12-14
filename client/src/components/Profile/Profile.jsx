@@ -40,9 +40,7 @@ const Profile = ({ setIsAuth }) => {
   const friendList = useSelector((state) => state.users.friends);
   const dispatch = useDispatch();
   const params = useParams();
-  const [isFriend, setisFriend] = useState(
-    friendList.some((friend) => friend == params.uid)
-  );
+  const [isFriend, setisFriend] = useState(false);
   const [edit, setEdit] = useState(false);
   const [aux, setAux] = useState(false);
   const friend = {
@@ -87,6 +85,8 @@ const Profile = ({ setIsAuth }) => {
           setProfile(data);
         }
       });
+      console.log(params?.uid, friendList, isFriend);
+      setisFriend(friendList.includes(params.uid))
   }, [params?.uid, friendList, isFriend]);
 
   useEffect(() => {
